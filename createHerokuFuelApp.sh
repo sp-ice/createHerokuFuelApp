@@ -26,6 +26,30 @@ git init
 heroku create $1
 
 # gitサブモジュール追加
+ed - .gitignore << END
+%s/\/fuel\/core\//#\/fuel\/core\//g
+w
+END
+ed - .gitignore << END
+%s/\/fuel\/packages\/oil\//#\/fuel\/packages\/oil\//g
+w
+END
+ed - .gitignore << END
+%s/\/fuel\/packages\/auth\//#\/fuel\/packages\/auth\//g
+w
+END
+ed - .gitignore << END
+%s/\/fuel\/packages\/parser\//#\/fuel\/packages\/parser\//g
+w
+END
+ed - .gitignore << END
+%s/\/fuel\/packages\/orm\//#\/fuel\/packages\/orm\//g
+w
+END
+ed - .gitignore << END
+%s/\/fuel\/packages\/email\//#\/fuel\/packages\/email\//g
+w
+END
 git submodule add git://github.com/fuel/core.git fuel/core
 git submodule add git://github.com/fuel/oil.git fuel/packages/oil
 git submodule add git://github.com/fuel/auth.git fuel/packages/auth
